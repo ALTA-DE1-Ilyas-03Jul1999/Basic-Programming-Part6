@@ -1,5 +1,16 @@
 def remove_duplicates(array):
-    return 0
+    if len(array) <= 1:
+        return len(array)
+
+    next_non_duplicate = 1 
+
+
+    for i in range(1, len(array)):
+        if array[i] != array[i-1]:
+            array[next_non_duplicate] = array[i]
+            next_non_duplicate += 1
+
+    return next_non_duplicate
 
 if __name__ == '__main__':
     print(remove_duplicates([2, 3, 3, 3, 6, 9, 9])) # 4

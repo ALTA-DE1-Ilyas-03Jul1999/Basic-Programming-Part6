@@ -1,5 +1,14 @@
-def caesar(offset, input_str):
-    return ''
+chars = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz']
+
+def caesar (offset, sentence):    
+    for i in range(len(sentence)):
+        char = sentence[i]
+        
+        if (char.upper()):
+            return ''.join(chr((ord(char) - 97 + offset) % 26 + 97) for char in sentence)
+        
+
+
 
 if __name__ == '__main__':
     print(caesar(3, "abc")) # def
